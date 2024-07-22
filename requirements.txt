@@ -1,0 +1,14 @@
+chromadb
+ipex-llm==2.1.0b20240711
+modelscope
+streamlit
+huggingface-hub
+PyMuPDF 
+llama-index-vector-stores-chroma 
+llama-index-readers-file 
+llama-index-embeddings-huggingface 
+llama-index
+fitz
+opencv-python
+paddlepaddle
+fitz
