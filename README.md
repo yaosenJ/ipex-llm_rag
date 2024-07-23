@@ -58,5 +58,13 @@ if __name__ == '__main__':
 
 ```
 
-### 5. 推理部署
+### 6. 推理部署
+
 streamlit run streamlit_app.py
+
+<p align="center">
+    <br>
+    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/ModelScope.png" />
+    <br>
+</p>
+
