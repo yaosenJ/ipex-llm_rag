@@ -13,7 +13,7 @@
 
 ```shell
 
-https://github.com/yaosenJ/ipex-llm_rag.git
+git clone https://github.com/yaosenJ/ipex-llm_rag.git
 cd ipex-llm_rag
 bash install.sh
 
