@@ -19,3 +19,12 @@ bash install.sh
 conda activate ipex
 
 ```
+### 3. 环境依赖包安装
+
+```shell
+
+pip install modelscope
+pip install streamlit
+pip install llama-index-vector-stores-chroma llama-index-readers-file llama-index-embeddings-huggingface llama-index
+
+```
