@@ -6,5 +6,9 @@
 ### 2. 虚拟环境创建
 
 ```shell
+
+https://github.com/yaosenJ/ipex-llm_rag.git
+cd ipex-llm_rag
 bash install.sh
+
 ```
