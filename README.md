@@ -57,3 +57,6 @@ if __name__ == '__main__':
     tokenizer.save_pretrained('qwen2chat_int4')
 
 ```
+
+### 5. 推理部署
+streamlit run streamlit_app.py
