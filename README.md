@@ -64,7 +64,7 @@ streamlit run streamlit_app.py
 
 <p align="center">
     <br>
-    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/ModelScope.png" />
+    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/demo.png" />
     <br>
 </p>
 
