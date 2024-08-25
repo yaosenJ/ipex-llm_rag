@@ -77,3 +77,8 @@ streamlit run streamlit_app.py
 ####  7.1 ASR
 
 模型下载：[https://www.modelscope.cn/models/AI-ModelScope/whisper-large-v3](https://www.modelscope.cn/models/AI-ModelScope/whisper-large-v3)
+
+```python
+from modelscope import snapshot_download
+model_dir = snapshot_download('AI-ModelScope/whisper-large-v3', cache_dir='model/asr', revision='master' )
+```
