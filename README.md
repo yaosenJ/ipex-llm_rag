@@ -83,7 +83,7 @@ from modelscope import snapshot_download
 model_dir = snapshot_download('AI-ModelScope/whisper-large-v3', cache_dir='./model/asr', revision='master' )
 ```
 
-模型低精度int4量化
+模型低精度**int4**量化
 ```python
 from ipex_llm.transformers import AutoModelForSpeechSeq2Seq
 from transformers import  AutoTokenizer
@@ -94,3 +94,47 @@ model =AutoModelForSpeechSeq2Seq.from_pretrained(pretrained_model_name_or_path="
 model.save_low_bit('./model/asr/AI-ModelScope/whisper-large-v3_int4')
 tokenizer.save_pretrained('./model/asr/AI-ModelScope/whisper-large-v3_int4')
 ```
+
+加载量化版的**Whisper-large-v3**模型
+```python
+load_path = "./model/asr/AI-ModelScope/whisper-large-v3_int4"
+model = AutoModelForSpeechSeq2Seq.load_low_bit(load_path, trust_remote_code=True)
+```
+加载 **Whisper Processor**
+
+```python
+from transformers import WhisperProcessor
+processor = WhisperProcessor.from_pretrained(pretrained_model_name_or_path="./model/asr/A/AI-ModelScope/whisper-large-v3_int4")
+```
+使用带有 INT4 优化功能的 **IPEX-LLM**优化 **Whisper-large-v3** 模型并加载 Whisper Processor 后，就可以开始通过模型推理转录音频了。
+首先从原始语音波形中提取序列数据
+```python
+import librosa
+data_en, sample_rate_en = librosa.load("audio_zn.mp3", sr=16000)
+```
+然后根据序列数据转录音频文件
+
+```python
+import torch
+import time
+
+# 定义任务类型
+forced_decoder_ids = processor.get_decoder_prompt_ids(language="Chinese", task="transcribe")
+
+with torch.inference_mode():
+    # 为 Whisper 模型提取输入特征
+    input_features = processor(data_en, sampling_rate=sample_rate_en, return_tensors="pt").input_features
+
+    # 为转录预测 token id
+    st = time.time()
+    predicted_ids = model.generate(input_features, forced_decoder_ids=forced_decoder_ids)
+    end = time.time()
+
+    # 将 token id 解码为文本
+    transcribe_str = processor.batch_decode(predicted_ids, skip_special_tokens=True)
+
+    print(f'Inference time: {end-st} s')
+    print('-'*20, 'Chinese Transcription', '-'*20)
+    print(transcribe_str)
+```
+最后结果展示如下：
