@@ -80,5 +80,17 @@ streamlit run streamlit_app.py
 
 ```python
 from modelscope import snapshot_download
-model_dir = snapshot_download('AI-ModelScope/whisper-large-v3', cache_dir='model/asr', revision='master' )
+model_dir = snapshot_download('AI-ModelScope/whisper-large-v3', cache_dir='./model/asr', revision='master' )
+```
+
+模型低精度int4量化
+```python
+from ipex_llm.transformers import AutoModelForSpeechSeq2Seq
+from transformers import  AutoTokenizer
+
+model =AutoModelForSpeechSeq2Seq.from_pretrained(pretrained_model_name_or_path="/mnt/workspace/A/AI-ModelScope/whisper-large-v3/",
+                                                  load_in_4bit=True,
+                                                  trust_remote_code=True)
+model.save_low_bit('./model/asr/AI-ModelScope/whisper-large-v3_int4')
+tokenizer.save_pretrained('./model/asr/AI-ModelScope/whisper-large-v3_int4')
 ```
