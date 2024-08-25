@@ -5,7 +5,7 @@
 
 <p align="center">
     <br>
-    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/intel-ipex-llm_v0.1/ModelScope.png](https://github.com/yaosenJ/ipex-llm_rag/blob/intel-ipex-llm_v0.1/ModelScope.png)" />
+    <img src="ModelScope.png" />
     <br>
 </p>
 
@@ -64,7 +64,7 @@ streamlit run streamlit_app.py
 
 <p align="center">
     <br>
-    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/demo.png" />
+    <img src="ModelScope.png" />
     <br>
 </p>
 
