@@ -104,7 +104,7 @@ model = AutoModelForSpeechSeq2Seq.load_low_bit(load_path, trust_remote_code=True
 
 ```python
 from transformers import WhisperProcessor
-processor = WhisperProcessor.from_pretrained(pretrained_model_name_or_path="./model/asr/A/AI-ModelScope/whisper-large-v3_int4")
+processor = WhisperProcessor.from_pretrained(pretrained_model_name_or_path="./model/asr/A/AI-ModelScope/whisper-large-v3")
 ```
 使用带有 INT4 优化功能的 **IPEX-LLM**优化 **Whisper-large-v3** 模型并加载 Whisper Processor 后，就可以开始通过模型推理转录音频了。
 首先从原始语音波形中提取序列数据
