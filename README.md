@@ -110,7 +110,7 @@ processor = WhisperProcessor.from_pretrained(pretrained_model_name_or_path="./mo
 首先从原始语音波形中提取序列数据
 ```python
 import librosa
-data_en, sample_rate_en = librosa.load("audio_zn.mp3", sr=16000)
+data_en, sample_rate_en = librosa.load("audio_zh.mp3", sr=16000)
 ```
 然后根据序列数据转录音频文件
 
