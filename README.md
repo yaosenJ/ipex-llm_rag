@@ -5,7 +5,7 @@
 
 <p align="center">
     <br>
-    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/ModelScope.png" />
+    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/intel-ipex-llm_v0.1/ModelScope.png](https://github.com/yaosenJ/ipex-llm_rag/blob/intel-ipex-llm_v0.1/ModelScope.png)" />
     <br>
 </p>
 
