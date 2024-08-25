@@ -31,7 +31,7 @@ pip install llama-index-vector-stores-chroma llama-index-readers-file llama-inde
 ### 4. 模型下载
 
 运行下面代码块，即可下载Qwen-1.5B-Instruct
-```shell
+```python
 
 import torch
 from modelscope import snapshot_download, AutoModel, AutoTokenizer
@@ -44,7 +44,7 @@ model_dir = snapshot_download('Qwen/Qwen2-1.5B-Instruct', cache_dir='qwen2chat_s
 ### 5. 模型量化
 
 运行下面代码块，即可对Qwen-1.5B-Instruct进行int4量化
-```shell
+```python
 
 from ipex_llm.transformers import AutoModelForCausalLM
 from transformers import  AutoTokenizer
