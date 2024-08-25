@@ -138,3 +138,8 @@ with torch.inference_mode():
     print(transcribe_str)
 ```
 最后结果展示如下：
+<p align="center">
+    <br>
+    <img src="asr.png" />
+    <br>
+</p>
