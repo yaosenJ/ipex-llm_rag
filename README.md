@@ -143,7 +143,9 @@ with torch.inference_mode():
     <img src="asr.png" />
     <br>
 </p>
-####  7.3 图生文
+
+####7.3 图生文
+
 ```python
 import torch
 from modelscope import snapshot_download, AutoModel, AutoTokenizer
