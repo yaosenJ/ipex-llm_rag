@@ -44,9 +44,9 @@
   <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E6%97%85%E6%B8%B8%E8%A7%84%E5%88%92%E5%8A%A9%E6%89%8B.png">
 </p>
 
-- 旅游问答助手
+- 旅游陪伴助手
 <p align="center">
-  <img src="https://github.com/yaosenJ/LvBanGPT/blob/main/img/%E9%97%AE%E7%AD%94%E5%8A%A9%E6%89%8B.gif" alt="Demo gif" >
+  <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E6%97%85%E6%B8%B8%E9%99%AA%E4%BC%B4%E5%8A%A9%E6%89%8B.png" >
 </p>
 
 - 旅游文案助手
