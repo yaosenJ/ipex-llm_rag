@@ -53,10 +53,11 @@
 <p align="center">
   <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E6%97%85%E6%B8%B8%E6%96%87%E6%A1%88%E5%8A%A9%E6%89%8B.png">
 </p>
-
-- 演示视频
   
-<iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113038422182000&bvid=BV1BcsMerEXx&cid=25617826933&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe> 
+- 部署及演示视频
+  
+[Wanderlust_Companion——智能旅游助手: https://www.bilibili.com/video/BV1BcsMerEXx](https://www.bilibili.com/video/BV1BcsMerEXx)
+
 
 **开源不易，如果本项目帮到大家，可以右上角帮我点个 star~ ⭐⭐ , 您的 star ⭐是我们最大的鼓励，谢谢各位！** 
 
