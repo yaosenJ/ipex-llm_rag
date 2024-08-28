@@ -66,18 +66,24 @@
 ### 4.1 平台选择
 
 利用阿里云ECS基于英特尔至强可扩展处理器**ecs.g8i.6xlarge**付费实例作为复赛项目代码基准平台进行部署、调优及演示
+
 **24核(vCPU) 96GiB** **ubuntu_22_04_x64_20G_alibase_20240710.vhd**  **100 Mbps(峰值)**
 
 <p align="center">
     <br>
-    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/intel-ipex-llm_v0.1/ModelScope.png" />
+    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/ecs.g8i.6xlarge.png" />
     <br>
 </p>
 
-### 2. 虚拟环境创建
+### 4.2. 虚拟环境创建
 
 ```shell
 
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+bash Miniconda3-latest-Linux-x86_64.sh
+source ~/.bashrc
+conda --version
+conda 
 git clone https://github.com/yaosenJ/ipex-llm_rag.git
 cd ipex-llm_rag
 bash install.sh
