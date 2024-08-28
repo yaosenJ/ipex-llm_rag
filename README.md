@@ -75,7 +75,7 @@
     <br>
 </p>
 
-### 4.2. 虚拟环境创建
+### 4.2 虚拟环境创建
 
 ```shell
 
@@ -83,55 +83,50 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 bash Miniconda3-latest-Linux-x86_64.sh
 source ~/.bashrc
 conda --version
-conda 
 git clone https://github.com/yaosenJ/ipex-llm_rag.git
 cd ipex-llm_rag
-bash install.sh
+conda create -n ipex python=3.11 -y
 conda activate ipex
 
 ```
-### 3. 环境依赖包安装
+### 4.3 环境依赖包安装
 
 ```shell
-
-pip install modelscope
-pip install streamlit
-pip install llama-index-vector-stores-chroma llama-index-readers-file llama-index-embeddings-huggingface llama-index
-
+pip install -r requirements.txt
 ```
-### 4. 模型下载
+### 4.4 模型下载
 
-运行下面代码块，即可下载Qwen-1.5B-Instruct
+运行下面代码块，即python down_model.py,下载 **Phi-3-vision-128k-instruct**, **Qwen2-7B-Instruct_int4**, **whisper-large-v3**, **bge-small-zh-v1.5**
 ```python
 
-import torch
-from modelscope import snapshot_download, AutoModel, AutoTokenizer
-import os
-# 第一个参数表示下载模型的型号，第二个参数是下载后存放的缓存地址，第三个表示版本号，默认 master
-model_dir = snapshot_download('Qwen/Qwen2-1.5B-Instruct', cache_dir='qwen2chat_src', revision='master')
+from modelscope import snapshot_download
+model_dir = snapshot_download('LLM-Research/Phi-3-vision-128k-instruct',cache_dir ='./models/')
+model_dir = snapshot_download('shiqiyio/Qwen2-7B-Instruct_int4',cache_dir ='./models/') #使用ipex-llm工具进行int4低精度量化
+model_dir = snapshot_download('AI-ModelScope/whisper-large-v3',cache_dir ='./models/')
+model_dir = snapshot_download('AI-ModelScope/bge-small-zh-v1.5',cache_dir ='./models/')
 
 ```
 
-### 5. 模型量化
+### 4.5 模型量化
 
-运行下面代码块，即可对Qwen-1.5B-Instruct进行int4量化
+运行下面代码块，即可对Qwen2-7B-Instruct进行int4量化
 ```python
 
 from ipex_llm.transformers import AutoModelForCausalLM
 from transformers import  AutoTokenizer
 import os
 if __name__ == '__main__':
-    model_path = os.path.join(os.getcwd(),"qwen2chat_src/Qwen/Qwen2-1___5B-Instruct")
+    model_path = os.path.join(os.getcwd(),"qwen/Qwen2-7B-Instruct")
     model = AutoModelForCausalLM.from_pretrained(model_path, load_in_low_bit='sym_int4', trust_remote_code=True)
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
-    model.save_low_bit('qwen2chat_int4')
-    tokenizer.save_pretrained('qwen2chat_int4')
+    model.save_low_bit('Qwen2-7B-Instruct_int4')
+    tokenizer.save_pretrained('Qwen2-7B-Instruct_int4')
 
 ```
 
-### 6. 推理部署
+### 4.6 推理部署
 
-streamlit run streamlit_app.py
+streamlit run app.py
 
 <p align="center">
     <br>
