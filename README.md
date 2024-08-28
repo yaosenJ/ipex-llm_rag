@@ -134,7 +134,6 @@ streamlit run app.py
 ### 5. 功能模块详解
 
 - ASR
-- TTS
 - 图生文
 - RAG
   
@@ -208,7 +207,7 @@ with torch.inference_mode():
     <br>
 </p>
 
-####5.2 图生文
+#### 5.2 图生文
 
 
 ```python
@@ -274,6 +273,6 @@ if __name__ == '__main__':
 最后结果展示如下：
 <p align="center">
     <br>
-    <img src="asr.png" />
+    <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E5%9B%BE%E6%96%87%E7%90%86%E8%A7%A3.png" />
     <br>
 </p>
