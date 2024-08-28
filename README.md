@@ -210,6 +210,70 @@ with torch.inference_mode():
 
 ####5.2 图生文
 
+
 ```python
 
+import os
+import time
+import torch
+import argparse
+import requests
+
+from PIL import Image
+from ipex_llm.transformers import AutoModelForCausalLM
+from transformers import AutoProcessor
+
+if __name__ == '__main__':
+    model_path = "./models/LLM-Research/Phi-3-vision-128k-instruct"
+    image_path = "./travel"
+
+    query = '描述这张图片'
+    model = AutoModelForCausalLM.from_pretrained(model_path,
+                                                 trust_remote_code=True,
+                                                 load_in_low_bit="sym_int8",
+                                                 _attn_implementation="eager",
+                                                 modules_to_not_convert=["vision_embed_tokens"])
+    
+    # Load processor
+    processor = AutoProcessor.from_pretrained(model_path, trust_remote_code=True)
+    
+   
+    messages = [
+        {"role": "user", "content": "<|image_1|>\n{prompt}".format(prompt=query)},
+    ]
+    prompt = processor.tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+
+    if os.path.exists(image_path):
+       image = Image.open(image_path)
+    else:
+       image = Image.open(requests.get(image_path, stream=True).raw)
+    
+    # Generate predicted tokens
+    with torch.inference_mode():
+        inputs = processor(prompt, [image], return_tensors="pt")
+        st = time.time()
+        output = model.generate(**inputs,
+                                eos_token_id=processor.tokenizer.eos_token_id,
+                                num_beams=1,
+                                do_sample=False,
+                                max_new_tokens=128,
+                                temperature=0.0)
+        end = time.time()
+        print(f'Inference time: {end-st} s')
+        output_str = processor.decode(output[0],
+                                      skip_special_tokens=True,
+                                      clean_up_tokenization_spaces=False)
+        print('-'*20, 'Prompt', '-'*20)
+        print(f'Message: {messages}')
+        print(f'Image link/path: {image_path}')
+        print('-'*20, 'Output', '-'*20)
+        print(output_str)
+
 ```
+
+最后结果展示如下：
+<p align="center">
+    <br>
+    <img src="asr.png" />
+    <br>
+</p>
