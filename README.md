@@ -51,7 +51,7 @@
 
 - 旅游文案助手
 <p align="center">
-  <img src="https://github.com/yaosenJ/LvBanGPT/blob/main/img/%E6%96%87%E6%A1%88%E5%8A%A9%E6%89%8B.gif" alt="Demo gif" >
+  <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E6%97%85%E6%B8%B8%E6%96%87%E6%A1%88%E5%8A%A9%E6%89%8B.png">
 </p>
 
 
