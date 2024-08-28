@@ -131,13 +131,13 @@ streamlit run app.py
 ```
 
 
-### 5. 功能模块详解
+## 5. 功能模块详解
 
 - ASR
 - 图生文
 - RAG
   
-####  5.1 ASR
+###  5.1 ASR
 
 模型下载：[https://www.modelscope.cn/models/AI-ModelScope/whisper-large-v3](https://www.modelscope.cn/models/AI-ModelScope/whisper-large-v3)
 
@@ -207,7 +207,7 @@ with torch.inference_mode():
     <br>
 </p>
 
-#### 5.2 图生文
+### 5.2 图生文
 
 
 ```python
@@ -274,5 +274,25 @@ if __name__ == '__main__':
 <p align="center">
     <br>
     <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E5%9B%BE%E6%96%87%E7%90%86%E8%A7%A3.png" />
+    <br>
+</p>
+
+### 5.3 RAG
+
+<p align="center">
+    <br>
+    <img src="rag1.png" />
+    <br>
+   <br>
+    <img src="rag2.png" />
+    <br>
+   <br>
+    <img src="rag3.png" />
+    <br>
+   <br>
+    <img src="rag4.png" />
+    <br>
+   <br>
+    <img src="rag5.png" />
     <br>
 </p>
