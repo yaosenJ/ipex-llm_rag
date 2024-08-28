@@ -1,6 +1,10 @@
-##  Wanderlust_Companion——智能旅游助手
+#  Wanderlust_Companion——智能旅游助手
 
-## 项目介绍
+<p align="center">
+  <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/logo.png">
+</p>
+
+## 1. 项目介绍
 
 亲爱的旅游爱好者们，欢迎来到**Wanderlust_Companion——智能旅游助手** ，您的专属旅行伙伴！我们致力于为您提供个性化的旅行规划、陪伴和分享服务，让您的旅程充满乐趣并留下难忘回忆。
 
@@ -29,11 +33,11 @@
 - 有效整合三大旅游助手:**旅游规划助手**、**旅游陪伴助手**、**旅游文案助手**
 - RAG技术、高效检索知识库知识
 
-## 系统架构图
+## 2. 系统架构图
 
 <center><img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/%E6%9E%B6%E6%9E%84%E5%9B%BE.png" alt="image-20240131182121394" style="zoom:100%;" />
 
-## 项目演示
+## 3. 项目演示
 
 - 旅游规划助手
 <p align="center">
