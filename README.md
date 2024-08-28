@@ -1,7 +1,7 @@
 #  Wanderlust_Companion——智能旅游助手
 
 <p align="center">
-  <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/logo.png" style="zoom:22%;">
+  <img src="https://github.com/yaosenJ/ipex-llm_rag/blob/main/logo.png" style="zoom:1%;">
 </p>
 
 ## 1. 项目介绍
